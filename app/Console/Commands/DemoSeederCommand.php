@@ -170,12 +170,12 @@ class DemoSeederCommand extends Command
                 'group_id'    => 2,
                 'link'        => 'https://styleci.io',
             ], [
-                'name'        => 'Patreon Page',
-                'description' => 'Support future development of Cachet.',
+                'name'        => 'GitHub',
+                'description' => '',
                 'status'      => 1,
                 'order'       => 0,
                 'group_id'    => 0,
-                'link'        => 'https://patreon.com/jbrooksuk',
+                'link'        => 'https://github.com/CachetHQ/Cachet',
             ],
         ];
 
@@ -347,6 +347,8 @@ EINCIDENT;
                 'scheduled_at' => (new DateTime())->add(new DateInterval('PT2H')),
             ],
         ];
+
+        Schedule::truncate();
 
         foreach ($defaultSchedules as $schedule) {
             Schedule::create($schedule);
